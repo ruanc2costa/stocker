@@ -12,9 +12,13 @@ async function buscarCotacoes() {
       const cotacoes = data.results.map((tickerInfo) => {
         const symbol = tickerInfo.symbol;
         const regularMarketPrice = tickerInfo.regularMarketPrice;
+        const regularMarketChangePercent = tickerInfo.regularMarketChangePercent;
 
-        if (symbol && regularMarketPrice) {
-          return `${symbol}: R$ ${regularMarketPrice}`;
+        // Verificar se o regularMarketChangePercent é negativo ou positivo
+        const changeColor = regularMarketChangePercent < 0 ? "red" : "green";
+
+        if (symbol && regularMarketPrice && regularMarketChangePercent !== undefined) {
+          return `${symbol}: R$ ${regularMarketPrice} <span style="color: ${changeColor};">${regularMarketChangePercent.toFixed(2)}%</span>`;
         } else {
           return `Dados indisponíveis para um ticker`;
         }
@@ -25,7 +29,7 @@ async function buscarCotacoes() {
 
       cotacoes.forEach((cotacao) => {
         const listItem = document.createElement("li");
-        listItem.textContent = cotacao;
+        listItem.innerHTML = cotacao; // Usamos innerHTML para interpretar a formatação de cores
         tickerList.appendChild(listItem);
       });
     } else {
@@ -37,6 +41,6 @@ async function buscarCotacoes() {
   }
 }
 
-// Chamar a função para buscar as cotações inicialmente
+// Função para buscar as cotações inicialmente
 buscarCotacoes();
 setInterval(buscarCotacoes, 900000); // Atualizar as cotações a cada 15 minutos (15 minutos = 900000 milissegundos)
