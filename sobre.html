@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/styles/sobreStyle.css" media="screen" />
+
+    <title>Stocker</title>
+</head>
+    <header>
+        <nav>
+            <a class="logo" href="/">STOCKER</a>
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <div id="busca">
+                <input type="text" class="textBusca"  id="searchInput" placeholder="Busque uma ação">
+                <button type="button" id="btnBusca" onclick= "redirecionarParaPesquisa()"> <img src="./assets/pesquisa-de-lupa.png" height="20" width="20" /></button>
+            </div>
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="/">Ajuda</a></li>
+                <li><a href="/">Contato</a></li>
+                <li><div class="mobileBusca">
+                    <a><input type="text" class="textBusca" placeholder="Busque uma ação">
+                    <img src="./assets/pesquisa-de-lupa.png" id="btnBusca"/></a>
+                </div></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <div class="main-container">
+        <div class="menu-container">
+
+        </div>
+        <div class="ticker-container">
+            <ul class="ticker">
+            </ul>
+        </div>
+        </div>
+        <script src="script.js"></script>
+        <div class="content-container">
+            <div class="sobrenos">
+                <h1>Quem somos</h1>
+                <span>Bem-vindo ao STOCKER - seu parceiro para acompanhar seus ativos de forma simples, eficiente e em constante evolução! Somos um site independente, desenvolvido com dedicação por uma única pessoa apaixonada por tecnologia e investimentos, que decidiu criar uma solução personalizada para ajudar investidores a monitorar suas carteiras de ativos de maneira prática e atualizada.</span>
+                <h1>Nossa Missão</h1>
+                <span>A missão da STOCKER é capacitar investidores a tomarem decisões informadas e estratégicas sobre seus investimentos, fornecendo uma plataforma intuitiva e confiável para acompanhar a performance de seus ativos. Nosso objetivo é oferecer uma experiência de usuário simples e funcional, permitindo que você se concentre no que realmente importa: suas escolhas financeiras.</span>
+                <h1>Nosso Compromisso</h1>
+                <span>Entendemos que somos um projeto em construção, desenvolvido por uma única pessoa. Estamos comprometidos em aprimorar constantemente a plataforma, adicionando novos recursos, melhorando a usabilidade e integrando tecnologias mais avançadas à medida que evoluímos.</span>
+                <h1>Planejamento</h1>
+                <ul>
+                    <li><s>Adicionar Header do Site</s></li>
+                    <li><s>Adicionar tela de ativos que atualiza de 15 em 15 minutos</s></li>
+                    <li>Adicionar página de dados para cada ação</li>
+                    <li>Aprimorar código para deixá-lo mais compacto e clean</li>
+                    <li>Adicionar sistema de Login para usuários</li>
+                </ul>
+            </div>
+        </div>
+    </body>
+    <script src="mobile-navbar.js"></script>
+</html>

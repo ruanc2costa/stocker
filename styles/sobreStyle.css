@@ -65,12 +65,19 @@ nav{
     height: 2rem;
   }
 
+.content-container{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .sobrenos{
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    width: 50%;
 }
 
 .sobrenos h1{
@@ -80,15 +87,19 @@ nav{
     margin-bottom: 5px;
 }
 
-.sobrenos p{
+.sobrenos span{
     color:black;
-    font-size: 2rem;
+    font-size: 25px;
+    margin-bottom: 10px;
 }
 
 .sobrenos a{
     color:blue;
 }
 
+.sobrenos li{
+    font-size: 20px;
+}
 
 @media (max-width: 999px){
     body{
@@ -118,6 +129,18 @@ nav{
     }
     .mobile-menu{
         display: block;
+    }
+
+    h1{
+        font-size: 20px
+    }
+    
+    .sobrenos span{
+        font-size: 15px;
+    }
+
+    .sobrenos li{
+        font-size: 15px;
     }
 }
 

@@ -26,7 +26,7 @@ async function buscarCotacoes() {
 
       // Atualizar a lista de cotações na tela
       tickerList.innerHTML = ""; // Limpar a lista antes de atualizar as cotações
-
+      
       cotacoes.forEach((cotacao) => {
         const listItem = document.createElement("li");
         listItem.innerHTML = cotacao; // Usamos innerHTML para interpretar a formatação de cores
@@ -44,3 +44,13 @@ async function buscarCotacoes() {
 // Função para buscar as cotações inicialmente
 buscarCotacoes();
 setInterval(buscarCotacoes, 900000); // Atualizar as cotações a cada 15 minutos (15 minutos = 900000 milissegundos)
+
+function redirecionarParaPesquisa() {
+  const ticker = document.getElementById("searchInput").value.trim();
+  if (ticker) {
+      // Substitua a URL_BASE pelo caminho da página onde você deseja redirecionar
+      const URL_BASE = "https://stocker.tec.br/ticker=";
+      window.location.href = `${URL_BASE}${ticker}`;
+  }
+  return false; // Evita o envio padrão do formulário
+}

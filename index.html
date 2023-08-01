@@ -15,22 +15,37 @@
                 <div class="line2"></div>
                 <div class="line3"></div>
             </div>
+            <div id="busca">
+                <input type="text" class="textBusca"  id="searchInput" placeholder="Busque uma ação">
+                <button type="button" id="btnBusca" onclick= "redirecionarParaPesquisa()"> <img src="./assets/pesquisa-de-lupa.png" height="20" width="20" /></button>
+            </div>
             <ul class="nav-list">
-                <li><a href="/">Home</a></li>
-                <li><a href="/">Sobre</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="/">Ajuda</a></li>
                 <li><a href="/">Contato</a></li>
+                <li><div class="mobileBusca">
+                    <a><input type="text" class="textBusca" placeholder="Busque uma ação">
+                    <img src="./assets/pesquisa-de-lupa.png" id="btnBusca"/></a>
+                </div></li>
             </ul>
         </nav>
     </header>
-    <hr>
     <body>
+        <div class="main-container">
+        <div class="menu-container">
+
+        </div>
         <div class="ticker-container">
             <ul class="ticker">
-                <!-- Aqui serão inseridas as cotações dinamicamente -->
             </ul>
         </div>
+        </div>
         <script src="script.js"></script>
+        <div class="sobrenos">
+        <h1>Site em construção</h1>
+        <p>Para acompanhar a construção do site e para saber mais sobre nosso objetivom ele acesse o <a class="sobre" href="roadmap.html">Roadmap</a> e o <a class="sobre" href="sobre.html"> Sobre nós</a></p>
+        </div>
     </body>
     <script src="mobile-navbar.js"></script>
 </html>
