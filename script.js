@@ -49,8 +49,14 @@ function redirecionarParaPesquisa() {
   const ticker = document.getElementById("searchInput").value.trim();
   if (ticker) {
       // Substitua a URL_BASE pelo caminho da página onde você deseja redirecionar
-      const URL_BASE = "https://stocker.tec.br/ticker=";
+      const URL_BASE = "https://stocker.tec.br/ticker.html?";
       window.location.href = `${URL_BASE}${ticker}`;
   }
   return false; // Evita o envio padrão do formulário
 }
+
+document.getElementById("searchInput").addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    redirecionarParaPesquisa(); // Chama a função quando a tecla "Enter" for pressionada
+  }
+});
