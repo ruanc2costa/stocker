@@ -17,7 +17,7 @@ const StockerHeader = () => {
     setTicker(event.target.value);
   };
 
-  const handleFormSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const trimmedTicker = ticker.trim();
     if (trimmedTicker) {
@@ -79,7 +79,10 @@ const StockerHeader = () => {
           <>
             <div className="profile">
               <a href="/profile">
-                <img src={user.picture} alt={user.name} />
+                <img
+                  src={user.picture || "/path/to/default-image.png"} // Use uma imagem padrão ou um caminho apropriado
+                  alt={user.name || "User Profile"} // Use o nome do usuário ou um texto padrão
+                />
               </a>
               <button onClick={handleLogout}>Logout</button>
             </div>
