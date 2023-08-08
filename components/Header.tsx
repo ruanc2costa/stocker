@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useUser } from '@auth0/nextjs-auth0/client';
+import React, { useState } from "react";
+import { useUser } from "@auth0/nextjs-auth0/client";
 
 const StockerHeader = () => {
-  const [ticker, setTicker] = useState('');
+  const [ticker, setTicker] = useState("");
   const { user, error, isLoading } = useUser(); // Obtenha o estado de autenticação usando o hook useUser
 
   const handleLogin = () => {
-    window.location.href = '/api/auth/login';
+    window.location.href = "/api/auth/login";
   };
 
   const handleLogout = () => {
-    window.location.href = '/api/auth/logout';
+    window.location.href = "/api/auth/logout";
   };
 
   const handleInputChange = (event) => {
@@ -57,10 +57,18 @@ const StockerHeader = () => {
             </button>
           </form>
           <ul className="nav-list">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="/">Ajuda</a></li>
-            <li><a href="/">Contato</a></li>
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="sobre.html">Sobre</a>
+            </li>
+            <li>
+              <a href="/">Ajuda</a>
+            </li>
+            <li>
+              <a href="/">Contato</a>
+            </li>
           </ul>
         </div>
         {isLoading ? (
@@ -69,8 +77,10 @@ const StockerHeader = () => {
           <p>Error: {error.message}</p>
         ) : user ? (
           <>
-            <div className='profile'>
-              <a href='/profile'><img src={user.picture} alt={user.name} /></a>
+            <div className="profile">
+              <a href="/profile">
+                <img src={user.picture} alt={user.name} />
+              </a>
               <button onClick={handleLogout}>Logout</button>
             </div>
           </>
