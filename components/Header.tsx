@@ -13,11 +13,11 @@ const StockerHeader = () => {
     window.location.href = "/api/auth/logout";
   };
 
-  const handleInputChange = (event) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTicker(event.target.value);
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = (event: React.ChangeEvent<HTMLInputElement>) => {
     event.preventDefault();
     const trimmedTicker = ticker.trim();
     if (trimmedTicker) {
