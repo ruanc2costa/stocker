@@ -17,7 +17,7 @@ const StockerHeader = () => {
     setTicker(event.target.value);
   };
 
-  const handleFormSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleFormSubmit: React.FormEventHandler<HTMLFormElement> = (event) => {
     event.preventDefault();
     const trimmedTicker = ticker.trim();
     if (trimmedTicker) {
