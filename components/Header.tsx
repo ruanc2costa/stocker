@@ -1,17 +1,7 @@
 import React, { useState } from "react";
-import { useUser } from "@auth0/nextjs-auth0/client";
 
 const StockerHeader = () => {
   const [ticker, setTicker] = useState("");
-  const { user, error, isLoading } = useUser(); // Obtenha o estado de autenticação usando o hook useUser
-
-  const handleLogin = () => {
-    window.location.href = "/api/auth/login";
-  };
-
-  const handleLogout = () => {
-    window.location.href = "/api/auth/logout";
-  };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setTicker(event.target.value);
@@ -71,25 +61,6 @@ const StockerHeader = () => {
             </li>
           </ul>
         </div>
-        {isLoading ? (
-          <p>Loading...</p>
-        ) : error ? (
-          <p>Error: {error.message}</p>
-        ) : user ? (
-          <>
-            <div className="profile">
-              <a href="/profile">
-                <img
-                  src={user.picture || "/path/to/default-image.png"} // Use uma imagem padrão ou um caminho apropriado
-                  alt={user.name || "User Profile"} // Use o nome do usuário ou um texto padrão
-                />
-              </a>
-              <button onClick={handleLogout}>Logout</button>
-            </div>
-          </>
-        ) : (
-          <button onClick={handleLogin}>Login</button>
-        )}
         {/* Resto do código */}
       </nav>
     </header>
